@@ -21,11 +21,13 @@
                     var reader;
                     reader = new FileReader();
                     reader.onload = function (ev) {
-                        TCGA.data.set(file.name, ev.target.result, function (err) {
+                        var key;
+                        key = "import:" + file.name;
+                        TCGA.data.set(key, ev.target.result, function (err) {
                             if (err !== null) {
                                 TCGA.ui.toast.error("File " + file.name + " could not be loaded into TCGA.data.");
                             } else {
-                                TCGA.ui.toast.info("File " + file.name + " was loaded into TCGA.data.");
+                                TCGA.ui.toast.info("File " + file.name + " was loaded into TCGA.data: " + key);
                             }
                         });
                     };
