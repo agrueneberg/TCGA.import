@@ -1,6 +1,9 @@
 (function () {
     "use strict";
 
+    /*jshint jquery:true browser:true */
+    /*global TCGA:true */
+
  // Register tab.
     TCGA.ui.registerTab({
         id: "import",
